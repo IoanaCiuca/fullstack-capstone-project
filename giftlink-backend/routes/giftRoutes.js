@@ -1,4 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const connectToDatabase = require('../models/db');
+const logger = require('../logger');
+
+// Get all gifts
 router.get('/', async (req, res) => {
+    logger.info('/ called');
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
         const db = await connectToDatabase();
